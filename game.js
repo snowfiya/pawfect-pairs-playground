@@ -36,16 +36,16 @@ class MemoryGame {
     // Set grid columns based on difficulty
     switch (this.difficulty) {
       case 'easy':
-        gameBoard.style.gridTemplateColumns = 'repeat(2, 1fr)';
+        gameBoard.style.gridTemplateColumns = 'repeat(3, 1fr)';
         break;
       case 'medium':
         gameBoard.style.gridTemplateColumns = 'repeat(4, 1fr)';
         break;
       case 'hard':
-        gameBoard.style.gridTemplateColumns = 'repeat(5, 1fr)';
+        gameBoard.style.gridTemplateColumns = 'repeat(6, 1fr)';
         break;
       default:
-        gameBoard.style.gridTemplateColumns = 'repeat(4, 1fr)';
+        gameBoard.style.gridTemplateColumns = 'repeat(3, 1fr)';
     }
 
     // Create card elements

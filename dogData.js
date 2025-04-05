@@ -48,27 +48,51 @@ const dogBreeds = [
   {
     breed: "Border Collie",
     image: "https://images.unsplash.com/photo-1553882809-a4f57e59501d?auto=format&fit=crop&w=200&h=200"
+  },
+  {
+    breed: "Dalmatian",
+    image: "https://images.unsplash.com/photo-1541599540903-216a46ca1dc0?auto=format&fit=crop&w=200&h=200"
+  },
+  {
+    breed: "Rottweiler",
+    image: "https://images.unsplash.com/photo-1567752881298-894bb81f9379?auto=format&fit=crop&w=200&h=200"
+  },
+  {
+    breed: "Doberman",
+    image: "https://images.unsplash.com/photo-1608744882201-52a7f7f3dd60?auto=format&fit=crop&w=200&h=200"
+  },
+  {
+    breed: "Boxer",
+    image: "https://images.unsplash.com/photo-1543071220-6ee5bf71a54e?auto=format&fit=crop&w=200&h=200"
+  },
+  {
+    breed: "Great Dane",
+    image: "https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=200&h=200"
+  },
+  {
+    breed: "Schnauzer",
+    image: "https://images.unsplash.com/photo-1541687546006-94516e4f14f9?auto=format&fit=crop&w=200&h=200"
   }
 ];
 
 // Game difficulty settings
 const difficultySettings = {
   easy: {
-    gridSize: 4, // 2x2
+    gridSize: 12, // 3x4 grid
     timeLimit: 60, // 1 minute
-    cardCount: 4, // 2 pairs
+    cardCount: 12, // 6 pairs
     pointsPerMatch: 50
   },
   medium: {
-    gridSize: 12, // 4x3
+    gridSize: 20, // 4x5 grid
     timeLimit: 90, // 1.5 minutes
-    cardCount: 12, // 6 pairs
+    cardCount: 20, // 10 pairs
     pointsPerMatch: 75
   },
   hard: {
-    gridSize: 20, // 5x4
+    gridSize: 36, // 6x6 grid
     timeLimit: 120, // 2 minutes
-    cardCount: 20, // 10 pairs
+    cardCount: 36, // 18 pairs
     pointsPerMatch: 100
   }
 };

@@ -71,21 +71,11 @@ body {
   z-index: 2;
 }
 
-.game-title {
-  font-size: 3.5rem;
-  color: white;
-  text-shadow: 
-    -4px -4px 0 #000,  
-    4px -4px 0 #000,
-    -4px 4px 0 #000,
-    4px 4px 0 #000;
-  transform: rotate(-5deg);
-  letter-spacing: 2px;
-}
-
-.subtitle {
-  margin-top: -20px;
-  font-size: 4.5rem;
+.game-logo {
+  width: 90%;
+  max-width: 320px;
+  height: auto;
+  z-index: 2;
 }
 
 /* Button styling */
@@ -263,6 +253,19 @@ body {
   font-weight: bold;
 }
 
+.difficulty-indicator.easy {
+  background-color: #4CAF50;
+}
+
+.difficulty-indicator.medium {
+  background-color: #FFD95A;
+  color: black;
+}
+
+.difficulty-indicator.hard {
+  background-color: #f44336;
+}
+
 .timer {
   background-color: #4CAF50;
   color: white;
@@ -308,8 +311,7 @@ body {
 
 .game-board {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 10px;
+  grid-gap: 8px;
   width: 100%;
   max-width: 380px;
   padding: 10px;
@@ -561,12 +563,8 @@ body {
     margin-top: 60px;
   }
   
-  .game-title {
-    font-size: 2.8rem;
-  }
-  
-  .subtitle {
-    font-size: 3.5rem;
+  .game-logo {
+    width: 80%;
   }
   
   .button-container {
@@ -584,12 +582,8 @@ body {
     margin-top: 30px;
   }
   
-  .game-title {
-    font-size: 2.5rem;
-  }
-  
-  .subtitle {
-    font-size: 3rem;
+  .game-logo {
+    width: 70%;
   }
   
   .button-container {
@@ -612,4 +606,11 @@ body {
 
 .card-matched {
   animation: match-animation 0.5s;
+}
+
+/* Responsive card sizes for different difficulties */
+@media (max-width: 400px) {
+  .game-board {
+    padding: 5px;
+  }
 }
