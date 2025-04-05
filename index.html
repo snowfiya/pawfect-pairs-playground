@@ -1,26 +1,182 @@
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>pawfect-pairs-playground</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pawfect Pairs</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="game-container">
+    <!-- SPLASH SCREEN -->
+    <section id="splash-screen" class="screen active">
+      <div class="title-container">
+        <h1 class="game-title">PAWFECT</h1>
+        <h1 class="game-title subtitle">PAIRS</h1>
+        <img src="public/lovable-uploads/d30b001f-f333-414e-920e-1bfed7f63616.png" alt="Background Scene" class="background-image">
+      </div>
+      <div class="button-container">
+        <button class="btn btn-primary" id="signup-btn">Sign-Up</button>
+        <button class="btn btn-primary" id="login-btn">Login</button>
+      </div>
+    </section>
 
-    <meta property="og:title" content="pawfect-pairs-playground" />
-    <meta property="og:description" content="Lovable Generated Project" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <!-- SIGNUP SCREEN -->
+    <section id="signup-screen" class="screen">
+      <div class="auth-container">
+        <h2>Sign-Up</h2>
+        <form id="signup-form">
+          <div class="form-group">
+            <label for="signup-username">Username</label>
+            <input type="text" id="signup-username" required>
+          </div>
+          <div class="form-group">
+            <label for="signup-password">Password</label>
+            <input type="password" id="signup-password" required>
+          </div>
+          <div class="button-row">
+            <button type="button" class="btn btn-secondary bone-btn" id="signup-back-btn">BACK</button>
+            <button type="submit" class="btn btn-primary bone-btn" id="signup-submit-btn">SIGN-UP</button>
+          </div>
+        </form>
+      </div>
+      <img src="public/lovable-uploads/d30b001f-f333-414e-920e-1bfed7f63616.png" alt="Background Scene" class="background-image">
+    </section>
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-  </head>
+    <!-- LOGIN SCREEN -->
+    <section id="login-screen" class="screen">
+      <div class="auth-container">
+        <h2>Login</h2>
+        <form id="login-form">
+          <div class="form-group">
+            <label for="login-username">Username</label>
+            <input type="text" id="login-username" required>
+          </div>
+          <div class="form-group">
+            <label for="login-password">Password</label>
+            <input type="password" id="login-password" required>
+          </div>
+          <div class="button-row">
+            <button type="button" class="btn btn-secondary bone-btn" id="login-back-btn">BACK</button>
+            <button type="submit" class="btn btn-primary bone-btn" id="login-submit-btn">LOGIN</button>
+          </div>
+        </form>
+      </div>
+      <img src="public/lovable-uploads/d30b001f-f333-414e-920e-1bfed7f63616.png" alt="Background Scene" class="background-image">
+    </section>
 
-  <body>
-    <div id="root"></div>
-    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+    <!-- MAIN MENU SCREEN -->
+    <section id="main-menu-screen" class="screen">
+      <div class="title-container">
+        <h1 class="game-title">PAWFECT</h1>
+        <h1 class="game-title subtitle">PAIRS</h1>
+      </div>
+      <div class="button-container">
+        <button class="btn btn-primary" id="start-btn">Start</button>
+        <button class="btn btn-primary" id="leaderboard-menu-btn">Leaderboard</button>
+        <button class="btn btn-primary" id="exit-btn">Exit</button>
+      </div>
+      <img src="public/lovable-uploads/d30b001f-f333-414e-920e-1bfed7f63616.png" alt="Background Scene" class="background-image">
+    </section>
+
+    <!-- DIFFICULTY SELECTION SCREEN -->
+    <section id="difficulty-screen" class="screen">
+      <div class="auth-container">
+        <h2>Select</h2>
+        <p>Difficulty</p>
+        <div class="difficulty-options">
+          <button class="btn difficulty-btn easy" data-difficulty="easy">EASY</button>
+          <button class="btn difficulty-btn medium" data-difficulty="medium">MEDIUM</button>
+          <button class="btn difficulty-btn hard" data-difficulty="hard">HARD</button>
+        </div>
+        <button class="btn bone-btn" id="play-btn">PLAY!</button>
+      </div>
+      <img src="public/lovable-uploads/d30b001f-f333-414e-920e-1bfed7f63616.png" alt="Background Scene" class="background-image">
+      <button class="back-btn" id="difficulty-back-btn">←</button>
+    </section>
+
+    <!-- GAME SCREEN -->
+    <section id="game-screen" class="screen">
+      <div class="game-header">
+        <button class="back-btn" id="game-back-btn">←</button>
+        <div class="difficulty-indicator" id="current-difficulty">EASY</div>
+        <div class="timer" id="timer">1:00</div>
+        <button class="pause-btn" id="pause-btn">⏸️</button>
+      </div>
+      <div class="score" id="score">0</div>
+      <div class="game-board" id="game-board">
+        <!-- Cards will be added dynamically here -->
+      </div>
+      <img src="public/lovable-uploads/d30b001f-f333-414e-920e-1bfed7f63616.png" alt="Background Scene" class="background-image">
+    </section>
+
+    <!-- PAUSE SCREEN -->
+    <section id="pause-screen" class="screen">
+      <div class="pause-container">
+        <h2 class="pause-title">PAUSED</h2>
+        <button class="btn dark-btn" id="back-to-home-btn">BACK TO HOME</button>
+        <button class="btn dark-btn" id="restart-game-btn">RESTART GAME</button>
+        <button class="btn bone-btn" id="back-to-game-btn">back to game</button>
+      </div>
+      <img src="public/lovable-uploads/d30b001f-f333-414e-920e-1bfed7f63616.png" alt="Background Scene" class="background-image dimmed">
+    </section>
+
+    <!-- TIME ENDED SCREEN -->
+    <section id="time-ended-screen" class="screen">
+      <div class="end-container">
+        <h2 class="end-title">TIME ENDED!</h2>
+        <p>score:</p>
+        <div class="final-score" id="final-score-loss">0</div>
+        <button class="btn dark-btn" id="play-again-loss-btn">PLAY AGAIN?</button>
+        <button class="btn bone-btn" id="back-home-loss-btn">back to home</button>
+      </div>
+      <img src="public/lovable-uploads/d30b001f-f333-414e-920e-1bfed7f63616.png" alt="Background Scene" class="background-image dimmed">
+    </section>
+
+    <!-- COMPLETED SCREEN -->
+    <section id="completed-screen" class="screen">
+      <div class="end-container">
+        <h2 class="end-title">COMPLETED!</h2>
+        <div class="stars-container">
+          <div class="star">★</div>
+          <div class="star">★</div>
+          <div class="star">★</div>
+        </div>
+        <div class="final-score" id="final-score-win">0</div>
+        <button class="btn dark-btn" id="play-again-win-btn">PLAY AGAIN?</button>
+        <button class="btn dark-btn" id="view-leaderboard-btn">VIEW LEADERBOARD</button>
+        <button class="btn bone-btn" id="back-home-win-btn">home</button>
+      </div>
+      <img src="public/lovable-uploads/d30b001f-f333-414e-920e-1bfed7f63616.png" alt="Background Scene" class="background-image dimmed">
+    </section>
+
+    <!-- LEADERBOARD SCREEN -->
+    <section id="leaderboard-screen" class="screen">
+      <div class="leaderboard-container">
+        <h2>LEADERBOARD</h2>
+        <div class="difficulty-tabs">
+          <button class="tab-btn easy active" data-tab="easy">EASY</button>
+          <button class="tab-btn medium" data-tab="medium">MEDIUM</button>
+          <button class="tab-btn hard" data-tab="hard">HARD</button>
+        </div>
+        <div class="leaderboard-content" id="leaderboard-content">
+          <!-- Leaderboard entries will be added dynamically here -->
+        </div>
+        <div class="personal-best">
+          <span>personal best</span>
+          <span id="personal-best-score">0</span>
+        </div>
+        <button class="btn bone-btn" id="leaderboard-home-btn">home</button>
+      </div>
+      <img src="public/lovable-uploads/d30b001f-f333-414e-920e-1bfed7f63616.png" alt="Background Scene" class="background-image">
+      <button class="back-btn" id="leaderboard-back-btn">←</button>
+    </section>
+  </div>
+  
+  <script src="dogData.js"></script>
+  <script src="auth.js"></script>
+  <script src="game.js"></script>
+  <script src="app.js"></script>
+</body>
 </html>
